@@ -1,0 +1,9 @@
+C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\bin\Debug\cstech.exe.config
+C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\bin\Debug\cstech.exe
+C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\bin\Debug\cstech.pdb
+C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cstech.frmSayiTahmini.resources
+C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cstech.Properties.Resources.resources
+C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cstech.csproj.GenerateResource.cache
+C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cstech.csproj.CoreCompileInputs.cache
+C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cstech.exe
+C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cstech.pdb
