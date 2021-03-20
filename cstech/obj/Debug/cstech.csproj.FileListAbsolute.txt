@@ -7,3 +7,12 @@ C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cste
 C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cstech.csproj.CoreCompileInputs.cache
 C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cstech.exe
 C:\Users\Eser\Documents\Visual Studio 2017\Projects\cstech\cstech\obj\Debug\cstech.pdb
+D:\Projeler\sayitahmin\cstech\bin\Debug\cstech.exe.config
+D:\Projeler\sayitahmin\cstech\bin\Debug\cstech.exe
+D:\Projeler\sayitahmin\cstech\bin\Debug\cstech.pdb
+D:\Projeler\sayitahmin\cstech\obj\Debug\cstech.csprojAssemblyReference.cache
+D:\Projeler\sayitahmin\cstech\obj\Debug\cstech.frmSayiTahmini.resources
+D:\Projeler\sayitahmin\cstech\obj\Debug\cstech.Properties.Resources.resources
+D:\Projeler\sayitahmin\cstech\obj\Debug\cstech.csproj.GenerateResource.cache
+D:\Projeler\sayitahmin\cstech\obj\Debug\cstech.exe
+D:\Projeler\sayitahmin\cstech\obj\Debug\cstech.pdb

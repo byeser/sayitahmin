@@ -114,7 +114,14 @@ namespace cstech
             }
             return dict; 
         }
-
+        /// <summary>
+        /// Oyuncuya ipucu vermek için kullanılan fonksiyon 
+        /// </summary>
+        /// <param name="random_sayi">otomatik oluşan 4 haneli sayı</param>
+        /// <param name="disaridan_girilen_sayi">dışarıdan girdiğimiz sayı</param>
+        /// <param name="text">textbox</param>
+        /// <param name="hata">error priver</param>
+        /// <returns></returns>
         public static bool ipucu(string random_sayi, string disaridan_girilen_sayi, TextBox text, ErrorProvider hata)
         {
             for (int i = 0; i < random_sayi.Length; i++)
