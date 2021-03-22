@@ -8,7 +8,24 @@ using System.Windows.Forms;
 namespace cstech
 {
     public static class utils
-    {
+    { 
+        /// <summary>
+        /// ip ucu için belirli kriterler belirlendi. asal sayı,çift sayı,tek sayı ve 5 ten büyük veya küçük olup olmama durumu
+        /// </summary>
+        public static Dictionary<string, List<string>> ip_ucu_kriterleri = new Dictionary<string, List<string>>()
+        {
+            {"0", new List<string>(){ "5 ten küçük", "Çift sayı"} },
+            {"1", new List<string>(){ "Asal Sayı", "Tek Sayı" , "5 ten küçük" } },
+            {"2", new List<string>(){ "5 ten küçük", "Çift sayı" } },
+            {"3", new List<string>(){ "5 ten küçük", "Asal Sayı", "Tek Sayı"} },
+            {"4", new List<string>(){ "5 ten küçük", "Çift sayı"} },
+            {"5", new List<string>(){ "Asal Sayı" } },
+            {"6", new List<string>(){ "5 ten büyük", "Çift sayı" } },
+            {"7", new List<string>(){ "5 ten büyük", "Asal Sayı", "Tek Sayı"} },
+            {"8", new List<string>(){ "5 ten büyük", "Çift sayı"} },
+            {"9", new List<string>(){ "5 ten büyük", "Tek Sayı" } }
+
+        };
         /// <summary>
         /// dışarıdan girilecek sayının boş  olma durumu
         /// </summary>
@@ -18,7 +35,7 @@ namespace cstech
         public static bool bos_sayi_kontrolu(TextBox text, ErrorProvider hata)
         {
             if (string.IsNullOrEmpty(text.Text))
-            {                
+            {
                 hata.SetError(text, "Boş bırakılamaz !");//Sayı girilmemişse textbox ın yanında  hata provider ı kırmızı renkte yanıp söner
                 return false;
             }
@@ -89,21 +106,21 @@ namespace cstech
         /// <param name="disaridan_girilen_sayi">dışarıdan girilen rakamları farklı sayı</param>
         /// <returns></returns>
         public static Dictionary<enums.puanlama, int> oyun_puanlama(int random_sayi, string disaridan_girilen_sayi)
-        { 
+        {
             Dictionary<byte, byte> rndbasamak = new Dictionary<byte, byte>();
             var dict = new Dictionary<enums.puanlama, int>();
             for (byte i = 1; i < random_sayi.ToString().Length + 1; i++)
             {
-                if (!rndbasamak.ContainsKey(i))  
-                    rndbasamak.Add(i, new byte()); 
-                rndbasamak[i] = Convert.ToByte(random_sayi.ToString()[i - 1].ToString());  
+                if (!rndbasamak.ContainsKey(i))
+                    rndbasamak.Add(i, new byte());
+                rndbasamak[i] = Convert.ToByte(random_sayi.ToString()[i - 1].ToString());
 
                 if (utils.disaridan_girilen_sayi(disaridan_girilen_sayi)[i] == rndbasamak[i]) //girilen sayının ve otomatik oluşan sayının basamak değerleri karşılaştırılıyor.
                 {
                     if (!dict.ContainsKey(enums.puanlama.arti))
                         dict.Add(enums.puanlama.arti, 0);
                     dict[enums.puanlama.arti] += 1;//iki sayınında basamak değerleri eğitse artı puanı 1 artar
-                    continue;//alt döngüye girmede  tekrar asıl döngüsüne gider
+                    continue;//alt şarta girmede  tekrar asıl döngüsüne gider
                 }
                 if (utils.disaridan_girilen_sayi(disaridan_girilen_sayi).ContainsValue(Convert.ToByte(random_sayi.ToString()[i - 1].ToString())))
                 {
@@ -112,31 +129,7 @@ namespace cstech
                     dict[enums.puanlama.eksi] -= 1;
                 }
             }
-            return dict; 
-        }
-        /// <summary>
-        /// Oyuncuya ipucu vermek için kullanılan fonksiyon 
-        /// </summary>
-        /// <param name="random_sayi">otomatik oluşan 4 haneli sayı</param>
-        /// <param name="disaridan_girilen_sayi">dışarıdan girdiğimiz sayı</param>
-        /// <param name="text">textbox</param>
-        /// <param name="hata">error priver</param>
-        /// <returns></returns>
-        public static bool ipucu(string random_sayi, string disaridan_girilen_sayi, TextBox text, ErrorProvider hata)
-        {
-            for (int i = 0; i < random_sayi.Length; i++)
-            {
-                for (int j = 0; j < disaridan_girilen_sayi.Length; j++)
-                {
-                    if (random_sayi[i] == disaridan_girilen_sayi[j])
-                    {
-                        hata.SetError(text, (j+1)+". sayınız eşleşmektedir. "+ disaridan_girilen_sayi[j].ToString());
-                        return true;
-                    }
-                }
-            }
-            hata.SetError(text, "Hiç bir basamak eşleşmemektedir.");
-            return false;
-        }
+            return dict;
+        } 
     }
 }

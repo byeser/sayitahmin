@@ -37,6 +37,10 @@
             this.lblArti = new System.Windows.Forms.Label();
             this.lblEksi = new System.Windows.Forms.Label();
             this.btnYeniSayi = new System.Windows.Forms.Button();
+            this.lblRakam1 = new System.Windows.Forms.Label();
+            this.lblRakam4 = new System.Windows.Forms.Label();
+            this.lblRakam3 = new System.Windows.Forms.Label();
+            this.lblRakam2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.hata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,18 +82,18 @@
             this.lblArti.AutoSize = true;
             this.lblArti.Location = new System.Drawing.Point(97, 74);
             this.lblArti.Name = "lblArti";
-            this.lblArti.Size = new System.Drawing.Size(35, 13);
+            this.lblArti.Size = new System.Drawing.Size(40, 13);
             this.lblArti.TabIndex = 4;
-            this.lblArti.Text = "label2";
+            this.lblArti.Text = "+ puan";
             // 
             // lblEksi
             // 
             this.lblEksi.AutoSize = true;
             this.lblEksi.Location = new System.Drawing.Point(138, 74);
             this.lblEksi.Name = "lblEksi";
-            this.lblEksi.Size = new System.Drawing.Size(35, 13);
+            this.lblEksi.Size = new System.Drawing.Size(37, 13);
             this.lblEksi.TabIndex = 5;
-            this.lblEksi.Text = "label2";
+            this.lblEksi.Text = "- puan";
             // 
             // btnYeniSayi
             // 
@@ -101,11 +105,51 @@
             this.btnYeniSayi.UseVisualStyleBackColor = true;
             this.btnYeniSayi.Click += new System.EventHandler(this.btnYeniSayi_Click);
             // 
+            // lblRakam1
+            // 
+            this.lblRakam1.AutoSize = true;
+            this.lblRakam1.Location = new System.Drawing.Point(288, 14);
+            this.lblRakam1.Name = "lblRakam1";
+            this.lblRakam1.Size = new System.Drawing.Size(48, 13);
+            this.lblRakam1.TabIndex = 7;
+            this.lblRakam1.Text = "1. rakam";
+            // 
+            // lblRakam4
+            // 
+            this.lblRakam4.AutoSize = true;
+            this.lblRakam4.Location = new System.Drawing.Point(288, 84);
+            this.lblRakam4.Name = "lblRakam4";
+            this.lblRakam4.Size = new System.Drawing.Size(48, 13);
+            this.lblRakam4.TabIndex = 8;
+            this.lblRakam4.Text = "4. rakam";
+            // 
+            // lblRakam3
+            // 
+            this.lblRakam3.AutoSize = true;
+            this.lblRakam3.Location = new System.Drawing.Point(288, 62);
+            this.lblRakam3.Name = "lblRakam3";
+            this.lblRakam3.Size = new System.Drawing.Size(48, 13);
+            this.lblRakam3.TabIndex = 9;
+            this.lblRakam3.Text = "3. rakam";
+            // 
+            // lblRakam2
+            // 
+            this.lblRakam2.AutoSize = true;
+            this.lblRakam2.Location = new System.Drawing.Point(288, 38);
+            this.lblRakam2.Name = "lblRakam2";
+            this.lblRakam2.Size = new System.Drawing.Size(48, 13);
+            this.lblRakam2.TabIndex = 10;
+            this.lblRakam2.Text = "2. rakam";
+            // 
             // frmSayiTahmini
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 116);
+            this.ClientSize = new System.Drawing.Size(520, 116);
+            this.Controls.Add(this.lblRakam2);
+            this.Controls.Add(this.lblRakam3);
+            this.Controls.Add(this.lblRakam4);
+            this.Controls.Add(this.lblRakam1);
             this.Controls.Add(this.btnYeniSayi);
             this.Controls.Add(this.lblEksi);
             this.Controls.Add(this.lblArti);
@@ -133,6 +177,10 @@
         private System.Windows.Forms.Label lblEksi;
         private System.Windows.Forms.Label lblArti;
         private System.Windows.Forms.Button btnYeniSayi;
+        private System.Windows.Forms.Label lblRakam2;
+        private System.Windows.Forms.Label lblRakam3;
+        private System.Windows.Forms.Label lblRakam4;
+        private System.Windows.Forms.Label lblRakam1;
     }
 }
 

@@ -21,6 +21,6 @@ namespace cstech
             /// sayıların basamak değerleri farklı yerdeyse eksi puan eklenir.
             /// </summary>
             eksi
-        }
+        }        
     }
 }

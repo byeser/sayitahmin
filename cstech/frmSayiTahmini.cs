@@ -26,16 +26,34 @@ namespace cstech
         {
             lblArti.Text = string.Empty;//Sayı girilmemişse artı puan boş atanır.
             lblEksi.Text = string.Empty;//Sayı girilmemişse eksi puan boş atanır.
-            Random rnd = new Random();
+            Random rnd = new Random();//otomatik sayı oluşturmak için kullanılır.
             string birlestir = string.Empty;
             Dictionary<byte, byte> dict = new Dictionary<byte, byte>();
+            byte sayac = 1;
             for (; ; )
             {
-                var t = Convert.ToByte(rnd.Next(1, 9).ToString());
-                if (!dict.ContainsKey(t))
+                var t = Convert.ToByte(rnd.Next(sayac == 1 ? 1 : 0, 9).ToString());//eger burada sayının ilk basamağı ise 1-9 arası rakam gelir aksi taktirde 0-9 arası rakamlar gelir.
+                if (!dict.ContainsKey(t))//üretilen rakam  dictionary de yoksa eklenir.
                 {
-                    dict.Add(t, t);
+                    switch (sayac)//basamak sayılarına göre ip ucu kriterleri switch case kullanarak ekrana yazıldı.
+                    {
+                        case 1://1 rakamın ip uçları
+                            lblRakam1.Text = string.Concat("1. Rakam :", string.Join(",", utils.ip_ucu_kriterleri[t.ToString()].ToList()));
+                            break;
+                        case 2://2 rakamın ip uçları
+                            lblRakam2.Text = string.Concat("2. Rakam :", string.Join(",", utils.ip_ucu_kriterleri[t.ToString()].ToList()));
+                            break;
+                        case 3://3 rakamın ip uçları
+                            lblRakam3.Text = string.Concat("3. Rakam :", string.Join(",", utils.ip_ucu_kriterleri[t.ToString()].ToList()));
+                            break;
+                        case 4://4 rakamın ip uçları
+                            lblRakam4.Text = string.Concat("4. Rakam :", string.Join(",", utils.ip_ucu_kriterleri[t.ToString()].ToList()));
+                            break;
+                    }
+
+                    dict.Add(t, t);//üretilen rakam dictionary ekleniyor
                     birlestir += t;
+                    sayac++;
                 }
                 if (birlestir.Length == 4)
                 {
@@ -71,7 +89,7 @@ namespace cstech
             //minimum 4 haneli sayı  kontrolü
             if (!utils.basamak_sayi_kontrolu(txtSayi, hata))
                 return;
-            
+
 
             var dict_basamak = utils.disaridan_girilen_sayi(txtSayi.Text);
 
@@ -84,15 +102,14 @@ namespace cstech
 
             //sayıda aynı rakamlar olma durumu ,
             if (!utils.farkli_rakamlar(txtSayi.Text.ToString()))
-            {                
+            {
                 hata.SetError(txtSayi, "Lütfen farklı rakamları giriniz !");
                 return;
             }
             else
                 hata.SetError(txtSayi, "");
 
-          if(! utils.ipucu(sayi.ToString(), txtSayi.Text, txtSayi, hata))
-            { return; }
+             
             //puan hesaplama
             var puanlama = utils.oyun_puanlama(sayi, txtSayi.Text);
             lblArti.Text = puanlama.ContainsKey(enums.puanlama.arti) ? puanlama[enums.puanlama.arti].ToString() : "0";
@@ -108,13 +125,31 @@ namespace cstech
             Random rnd = new Random();
             string birlestir = string.Empty;
             Dictionary<byte, byte> dict = new Dictionary<byte, byte>();
+            byte sayac = 1;
             for (; ; )
             {
-                var t = Convert.ToByte(rnd.Next(1, 9).ToString());
+                var t = Convert.ToByte(rnd.Next(sayac == 1 ? 1 : 0, 9).ToString());//eger burada sayının ilk basamağı ise 1-9 arası rakam gelir aksi taktirde 0-9 arası rakamlar gelir.
                 if (!dict.ContainsKey(t))
                 {
+                    switch (sayac)//basamak sayılarına göre ip ucu kriterleri switch case kullanarak ekrana yazıldı.
+                    {
+                        case 1://1 rakamın ip uçları
+                            lblRakam1.Text = string.Concat("1. Rakam :", string.Join(",", utils.ip_ucu_kriterleri[t.ToString()].ToList()));
+                            break;
+                        case 2://2 rakamın ip uçları
+                            lblRakam2.Text = string.Concat("2. Rakam :", string.Join(",", utils.ip_ucu_kriterleri[t.ToString()].ToList()));
+                            break;
+                        case 3://3 rakamın ip uçları
+                            lblRakam3.Text = string.Concat("3. Rakam :", string.Join(",", utils.ip_ucu_kriterleri[t.ToString()].ToList()));
+                            break;
+                        case 4://4 rakamın ip uçları
+                            lblRakam4.Text = string.Concat("4. Rakam :", string.Join(",", utils.ip_ucu_kriterleri[t.ToString()].ToList()));
+                            break;
+                    }
+
                     dict.Add(t, t);
                     birlestir += t;
+                    sayac++;
                 }
                 if (birlestir.Length == 4)
                 {
